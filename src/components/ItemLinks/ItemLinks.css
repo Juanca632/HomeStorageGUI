@@ -1,0 +1,102 @@
+.horizontal{
+    width: 15%;
+    height: 10px;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: -10;
+    
+}
+
+.vertical{
+    width: 10px;
+    height: 50%;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: -10;
+}
+
+.current{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    z-index: -5;
+}
+
+.vertical .current:last-child{
+    display: none;
+}
+.horizontal .slide-right-left {
+    -webkit-animation: flow-right 2s linear infinite;
+            animation: flow-right 2s linear infinite;
+}
+.vertical .slide-up-down {
+    -webkit-animation: flow-up 2s linear infinite;
+            animation: flow-up 2s linear infinite;
+}
+
+@-webkit-keyframes flow-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    25% {
+        -webkit-transform: translateX(15px);
+        transform: translateX(15px);
+    }
+    100% {
+        -webkit-transform: translateX(-15px);
+        transform: translateX(-15px);
+    }
+}
+
+@keyframes flow-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    25% {
+        -webkit-transform: translateX(15px);
+        transform: translateX(15px);
+    }
+    75% {
+        -webkit-transform: translateX(-15px);
+        transform: translateX(-15px);
+    }
+}
+
+@-webkit-keyframes flow-up {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25% {
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+    }
+    75% {
+        -webkit-transform: translateY(-7px);
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes flow-up {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25% {
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+    }
+    75% {
+        -webkit-transform: translateY(-7px);
+        transform: translateY(-7px);
+    }
+}
