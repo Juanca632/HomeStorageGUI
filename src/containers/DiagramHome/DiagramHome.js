@@ -90,7 +90,7 @@ const DiagramHome = () => {
 
                 <ItemLinks className="horizontal"/>
 
-                <ItemDiagramHome color="orange" title="Charge" info="6323W">
+                <ItemDiagramHome color="orange" title="Load" info="6323W">
                 <SparkAreaChart
                     data={chartdata}
                     categories={['Performance']}
