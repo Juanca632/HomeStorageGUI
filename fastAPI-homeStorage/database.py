@@ -5,10 +5,11 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
 # Define los detalles de conexión
-# token = "telegraf_token"
-token = "2VJCIWOABisuriGFwMUBQ2GBads2mBldIUQaTAlAoXZy0cp7U_ndx0muoPWGAPXJmOm_o745spoWIvHB1dJT1g=="
+token = "telegraf_token"
+# token = "2VJCIWOABisuriGFwMUBQ2GBads2mBldIUQaTAlAoXZy0cp7U_ndx0muoPWGAPXJmOm_o745spoWIvHB1dJT1g=="
 org = "Olenergies"
-url = "http://192.168.1.251:8086"
+# url = "http://192.168.1.251:8086"
+url = "http://192.168.1.117:8086"
 
 # Conecta al cliente de InfluxDB
 client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
@@ -48,7 +49,8 @@ for table in tables:
 
 soc = power_values
 
-soc = soc[-1]
+if(soc):
+    soc = soc[-1]
 
 #---------------------------------------CHART 1.1-------------------------------------------------
 
