@@ -28,7 +28,7 @@ query = """from(bucket: "Real_Time")
 |> filter(fn: (r) => r["client"] == "Olenergies")
 |> filter(fn: (r) => r["location"] == "Montreuil")
 |> filter(fn: (r) => r["_field"] =="soc")
-|> aggregateWindow(every: 1m, fn: mean)"""
+|> aggregateWindow(every: 5m, fn: mean)"""
 tables = client.query_api().query(query, org=org)
 
 # Almacena los datos en listas separadas
@@ -63,7 +63,7 @@ query = """from(bucket: "Real_Time")
 |> filter(fn: (r) => r["client"] == "Olenergies")
 |> filter(fn: (r) => r["location"] == "Montreuil")
 |> filter(fn: (r) => r["_field"] =="powerT")
-|> aggregateWindow(every: 1m, fn: mean)"""
+|> aggregateWindow(every: 5m, fn: mean)"""
 tables = client.query_api().query(query, org=org)
 
 # Almacena los datos en listas separadas
@@ -95,7 +95,7 @@ query = """from(bucket: "Real_Time")
 |> filter(fn: (r) => r["client"] == "Olenergies")
 |> filter(fn: (r) => r["location"] == "Montreuil")
 |> filter(fn: (r) => r["_field"] =="powerT")
-|> aggregateWindow(every: 1m, fn: mean)"""
+|> aggregateWindow(every: 5m, fn: mean)"""
 tables = client.query_api().query(query, org=org)
 
 # Almacena los datos en listas separadas
@@ -127,7 +127,7 @@ query = """from(bucket: "Real_Time")
 |> filter(fn: (r) => r["client"] == "Olenergies")
 |> filter(fn: (r) => r["location"] == "Montreuil")
 |> filter(fn: (r) => r["_field"] =="power")
-|> aggregateWindow(every: 1m, fn: mean)"""
+|> aggregateWindow(every: 5m, fn: mean)"""
 tables = client.query_api().query(query, org=org)
 
 # Almacena los datos en listas separadas
