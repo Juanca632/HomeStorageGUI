@@ -1,7 +1,6 @@
 import influxdb_client
 import os
 from influxdb_client import InfluxDBClient
-import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 
 # Define los detalles de conexión
