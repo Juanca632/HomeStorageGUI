@@ -7,35 +7,42 @@ import { ProgressCircle, SparkAreaChart } from '@tremor/react';
 import { useGetCharts } from '../../hooks/useGetCharts';
 
 const chartdata = [
-    {
-      month: 'Jan 21',
-      Performance: 4000,
-    },
-    {
-      month: 'Feb 21',
-      Performance: 3000,
-    },
-    {
-      month: 'Mar 21',
-      Performance: 2000,
-    },
-    {
-      month: 'Apr 21',
-      Performance: 2780,
-    },
-    {
-      month: 'May 21',
-      Performance: 1890,
-    },
-    {
-      month: 'Jun 21',
-      Performance: 2390,
-    },
-    {
-      month: 'Jul 21',
-      Performance: 3490,
-    },
-  ]
+  {
+    month: 'Jan 21',
+    Performance: 4000,
+    Benchmark: 3000,
+  },
+  {
+    month: 'Feb 21',
+    Performance: 3000,
+    Benchmark: 2000,
+  },
+  {
+    month: 'Mar 21',
+    Performance: 2000,
+    Benchmark: 1700,
+  },
+  {
+    month: 'Apr 21',
+    Performance: 2780,
+    Benchmark: 2500,
+  },
+  {
+    month: 'May 21',
+    Performance: 1890,
+    Benchmark: 1890,
+  },
+  {
+    month: 'Jun 21',
+    Performance: 2390,
+    Benchmark: 2000,
+  },
+  {
+    month: 'Jul 21',
+    Performance: 3490,
+    Benchmark: 3000,
+  },
+];
 
 const DiagramHome = () => {
 
@@ -55,7 +62,7 @@ const DiagramHome = () => {
         <React.Fragment>
 
             <ItemsContainer className='itemsContainer column-direction'>
-                <ItemDiagramHome color="yellow" title="Solar Panel" info="6323W">
+                <ItemDiagramHome color="yellow" title="Panneau Solaire" info="----W">
                 <SparkAreaChart
                     data={chartdata}
                     categories={['Performance']}
@@ -69,7 +76,7 @@ const DiagramHome = () => {
             </ItemsContainer>
 
             <ItemsContainer  className='itemsContainer row-direction'>
-                <ItemDiagramHome color="green" title="Grid" info="6323W">
+                <ItemDiagramHome color="darkblue" title="Reseau" info="----W">
                 <SparkAreaChart
                     data={chartdata}
                     categories={['Performance']}
@@ -79,18 +86,18 @@ const DiagramHome = () => {
                     showAnimation="true"
                 />
                 </ItemDiagramHome>
-
+                
+                {/* value={soc} */}
                 <ItemLinks className="horizontal"/>
-
-                <ItemDiagramHome color="grey" title="Battery">
-                    <ProgressCircle value={soc} size="xl" color="lime" showAnimation="true">
-                        <span className="percentage-battery">{soc}%</span>
+                <ItemDiagramHome color="black" title="Home Storage" logo={true}>
+                    <ProgressCircle value={35} size="xl" color="lime" showAnimation="true">
+                        <span className="percentage-battery">35%</span>
                     </ProgressCircle>
                 </ItemDiagramHome>
 
                 <ItemLinks className="horizontal"/>
 
-                <ItemDiagramHome color="orange" title="Load" info="6323W">
+                <ItemDiagramHome color="orange" title="Charge" info="----W">
                 <SparkAreaChart
                     data={chartdata}
                     categories={['Performance']}

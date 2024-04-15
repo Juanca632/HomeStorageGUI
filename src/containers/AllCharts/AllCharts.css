@@ -1,9 +1,106 @@
 .allCharts{
-    margin: 80px;
-    height: 80%;
-    width: 80%;
+    display: grid;
+    justify-content: center;
+    min-height: 100vh;
+    grid-template-columns: 35% 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(242, 242, 242);
+    /* background-color: rgb(17, 24, 39); */
+    padding: 20px;
+}
+.box{
+    background-color: var(--white);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 20px;
+    padding: 20px;
+}
+.b1{
+    grid-column: 1 / span 3;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+
+}
+.b2{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 45% 45%;
+    justify-content: space-around;
+
+}
+.card1{
+    width: 80%;
+    border: 0px solid black;
+} 
+
+.b3{
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.b4{
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+.b5{
+    grid-column: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.b5 h3{
+    font-weight: var(--bold);
+
+}
+.b5-barchart{
+    width: 100%;
+}
+.b1-box{
+    width: 90%;
+}
+.b2-box{
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 20px;
+    height: 150px;
+
+}
+.b3-box{
+    display: flex;
+    align-items: center;
+    
+}
+.b3-box{
+    font-size: var(--sm);
+}
+.b4-box{
+    border-radius: 20px;
+
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.title h3{
+    text-align: center;
+    font-weight: var(--bold);
+}
+.title p{
+    font-size: var(--sm);
+}
+.b4-boxes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.b4-box2 img{
+    height: 40px;
 }

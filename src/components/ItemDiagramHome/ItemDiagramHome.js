@@ -1,13 +1,16 @@
 import React from 'react';
 import "./ItemDiagramHome.css"
-
+import logo2 from "../../assets/img/logo2.png";
 
 
 
 const ItemDiagramHome = (props) => {
     return (
         <div className='container' style={{ backgroundColor: `var(--${props.color})` }}>
-                <h3>{props.title}</h3>
+                <div className="HomeStorage-card-logo">
+                    <h3>{props.title}</h3>
+                    {props.logo && <img src={logo2} alt="logo" className="logo-HomeStorage"></img>}
+                </div>
                 <p>{props.info}</p>
                 { props.children }
 
