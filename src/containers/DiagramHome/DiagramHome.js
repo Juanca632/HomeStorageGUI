@@ -59,9 +59,14 @@ const DiagramHome = () => {
         
     }, [soc]);
     return (
-        <React.Fragment>
+      <div className="home">
+          <div className="home-box1">
+              <div className="consumption">
 
-            <ItemsContainer className='itemsContainer column-direction'>
+              </div>
+          </div>
+          <div className="home-box2">
+              <div className="solar-panel">
                 <ItemDiagramHome color="yellow" title="Panneau Solaire" info="----W">
                 <SparkAreaChart
                     data={chartdata}
@@ -72,12 +77,17 @@ const DiagramHome = () => {
                     showAnimation="true"
                 />
                 </ItemDiagramHome>
-                <ItemLinks className="vertical"/>
-            </ItemsContainer>
-
-            <ItemsContainer  className='itemsContainer row-direction'>
+              </div>
+              <div className="homeStorage">
+                <ItemDiagramHome color="black" title="Home Storage" logo={true}>
+                    <ProgressCircle value={35} size="xl" color="lime" showAnimation="true">
+                        <span className="percentage-battery">35%</span>
+                    </ProgressCircle>
+                </ItemDiagramHome>
+              </div>
+              <div className="grid">
                 <ItemDiagramHome color="darkblue" title="Reseau" info="----W">
-                <SparkAreaChart
+                  <SparkAreaChart
                     data={chartdata}
                     categories={['Performance']}
                     index={'month'}
@@ -86,31 +96,63 @@ const DiagramHome = () => {
                     showAnimation="true"
                 />
                 </ItemDiagramHome>
+                                
+
+              </div>
+          </div>
+      </div>
+        // <React.Fragment>
+
+            // <ItemsContainer className='itemsContainer column-direction'>
+            //     <ItemDiagramHome color="yellow" title="Panneau Solaire" info="----W">
+            //     <SparkAreaChart
+            //         data={chartdata}
+            //         categories={['Performance']}
+            //         index={'month'}
+            //         colors={['indigo']}
+            //         className="h-8 w-20 sm:h-10 sm:w-36"
+            //         showAnimation="true"
+            //     />
+            //     </ItemDiagramHome>
+            //     <ItemLinks className="vertical"/>
+            // </ItemsContainer>
+
+        //     <ItemsContainer  className='itemsContainer row-direction'>
+        //         <ItemDiagramHome color="darkblue" title="Reseau" info="----W">
+        //         <SparkAreaChart
+        //             data={chartdata}
+        //             categories={['Performance']}
+        //             index={'month'}
+        //             colors={['red']}
+        //             className="h-8 w-20 sm:h-10 sm:w-36"
+        //             showAnimation="true"
+        //         />
+        //         </ItemDiagramHome>
                 
-                {/* value={soc} */}
-                <ItemLinks className="horizontal"/>
-                <ItemDiagramHome color="black" title="Home Storage" logo={true}>
-                    <ProgressCircle value={35} size="xl" color="lime" showAnimation="true">
-                        <span className="percentage-battery">35%</span>
-                    </ProgressCircle>
-                </ItemDiagramHome>
+        //         {/* value={soc} */}
+        //         <ItemLinks className="horizontal"/>
+        //         <ItemDiagramHome color="black" title="Home Storage" logo={true}>
+        //             <ProgressCircle value={35} size="xl" color="lime" showAnimation="true">
+        //                 <span className="percentage-battery">35%</span>
+        //             </ProgressCircle>
+        //         </ItemDiagramHome>
 
-                <ItemLinks className="horizontal"/>
+        //         <ItemLinks className="horizontal"/>
 
-                <ItemDiagramHome color="orange" title="Charge" info="----W">
-                <SparkAreaChart
-                    data={chartdata}
-                    categories={['Performance']}
-                    index={'month'}
-                    colors={['cyan']}
-                    className="h-8 w-20 sm:h-10 sm:w-36"
-                    showAnimation="true"
-                />
-                </ItemDiagramHome>
+        //         <ItemDiagramHome color="orange" title="Charge" info="----W">
+        //         <SparkAreaChart
+        //             data={chartdata}
+        //             categories={['Performance']}
+        //             index={'month'}
+        //             colors={['cyan']}
+        //             className="h-8 w-20 sm:h-10 sm:w-36"
+        //             showAnimation="true"
+        //         />
+        //         </ItemDiagramHome>
 
-            </ItemsContainer>
+        //     </ItemsContainer>
 
-        </React.Fragment>
+        // </React.Fragment>
     );
 }
 

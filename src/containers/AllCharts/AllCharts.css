@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     min-height: 100vh;
-    grid-template-columns: 35% 1fr 1fr;
+    grid-template-columns: 32% 1fr 1fr;
     gap: 10px;
     width: 100%;
     margin: 0 auto;
@@ -18,16 +18,20 @@
 }
 .b1{
     grid-column: 1 / span 3;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr auto;
+
 
 }
 .b2{
     display: grid;
     width: 100%;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 49% 49%;
     justify-content: space-around;
 
 }
@@ -64,12 +68,27 @@
     width: 100%;
 }
 .b1-box{
+    grid-row: 1 / span 1;
     width: 90%;
+    margin: auto;
 }
 .b2-box{
+    grid-row: 2 / span auto;
     border: 1px solid rgb(217, 217, 217);
     border-radius: 20px;
-    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.b2-boxes{
+    
+    padding: 10px;
+}
+.dividerbox{
+    border-right: 1px solid  rgb(217, 217, 217);
+}
+.b2-boxes img{
+    font-size: 10px;
 
 }
 .b3-box{
@@ -103,4 +122,42 @@
 }
 .b4-box2 img{
     height: 40px;
+}
+
+.text-card{
+    font-size: var(--xs);
+}
+.text-card-above{
+    margin-bottom: 10px;
+}
+.text-card-below{
+    margin-top: 10px;
+}
+.div-svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px !important;
+    width: 35px !important;
+    border-radius: 10px;
+    
+}
+.img-svg{
+    height: 23px !important;
+    width: 23px !important;
+}
+.solar-panel-div{
+    background-color: #eab308;
+}
+.electric-tower-div{
+    background-color: #f97316;
+}
+.electric-energy-div{
+    background-color: rgb(217, 217, 217);
+}
+.arrows-vertical-div{
+    background-color:#3b82f6;
+}
+.arrows-circle-div{
+    background-color:#22c55e;
 }
