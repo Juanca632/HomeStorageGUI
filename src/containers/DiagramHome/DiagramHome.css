@@ -13,48 +13,56 @@
 
 .home{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid black;
-    background-color: antiquewhite;
+    grid-template-columns: calc(30% + 40px) 1fr;
     height: 100vh;
     width: 100vw;
 }
 .home-box1{
     display: grid;
-    grid-template-rows: 30% 1fr;
+    grid-template-rows: calc(20% + 40px) 1fr;
 }
 .consumption{
     grid-row: 2 / span 1;
-    height: 300px;
-    width: 300px;
-    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 20px;
 }
 .home-box2{
-    border: 1px solid black;
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr 30px 1fr 30px 1fr;
+    grid-template-rows: 1fr 1fr 30px 1fr 1fr;
+    padding: 20px;
 }
 .solar-panel{
-    grid-column: 2 / span 1;
-    border: 1px solid black;
-    background-color: rgb(248, 241, 36);
-    height: 300px;
-    width: 200px;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2;
+
+}
+.vertical-link{
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.horizontal-link{
+    grid-column: 2 / span 3;
+    grid-row: 4 / span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .homeStorage{
     grid-column: 1 / span 1;
-    grid-row: 3 / span 1;
-    border: 1px solid black;
-    background-color: rgb(0, 0, 0);
-    height: 300px;
-    width: 200px;
+    grid-row: 4 / span 2;
+
 }
 .grid{
-    grid-column: 3 / span 1;
-    grid-row: 3 / span 1;
-    border: 1px solid black;
-    background-color: rgb(51, 20, 254);
-    height: 300px;
-    width: 200px;
+    grid-column: 5 / span 1;
+    grid-row: 4 / span 2;
+
 }

@@ -13,6 +13,13 @@ const ItemDiagramHome = (props) => {
                 </div>
                 <p>{props.info}</p>
                 { props.children }
+                {props.infoConsumption && 
+                <div className="info-consumption-div">
+                    <p>246.1V</p>
+                    <p>6A</p>
+                    <p>50Hz</p>
+                </div>
+                }
 
         </div>
     );
