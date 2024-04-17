@@ -83,18 +83,18 @@ const chartdata2 = [
 
 const DiagramHome = () => {
 
-  const API = "http://localhost:8000/soc";
+  // const API = "http://localhost:8000/soc";
 
-    let soc;
+  //   let soc;
 
-    soc = useGetCharts(API);
-    useEffect(() => {
-        const chartListAPI = soc;
-        localStorage.setItem("chartList", chartListAPI);
+  //   soc = useGetCharts(API);
+  //   useEffect(() => {
+  //       const chartListAPI = soc;
+  //       localStorage.setItem("chartList", chartListAPI);
 
         
         
-    }, [soc]);
+  //   }, [soc]);
 
     const dataFormatter = (number) =>
   `$${Intl.NumberFormat('us').format(number).toString()}`;

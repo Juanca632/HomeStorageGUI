@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./AllCharts.css"
-import { BarChart, Card, Divider, Switch, ProgressCircle } from '@tremor/react';
+import { BarChart, Card, Divider, Switch, ProgressCircle, DonutChart, Legend } from '@tremor/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 // import { Chart } from '../../components/Chart/Chart'; 
 // import { Database } from '../../components/Database/Database';
 // import { useGetCharts } from '../../hooks/useGetCharts';
@@ -12,6 +15,9 @@ import electricEnergy from "../../assets/img/electric-energy.svg"
 import arrowsCircle from "../../assets/img/arrows-circle.svg"
 import arrowsVertical from "../../assets/img/arrows-vertical.svg"
 import electricTower from "../../assets/img/electric-tower.svg"
+import battery from "../../assets/img/battery.svg"
+import logo2 from "../../assets/img/logo2.png"
+import bike from "../../assets/img/bike.svg"
 
 const data = [
     {
@@ -19,135 +25,166 @@ const data = [
       'Production solaire': 0,
       'Consommation réseau': 0.1,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '1h',
       'Production solaire': 0,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '2h',
       'Production solaire': 0,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '3h',
       'Production solaire': 0,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '4h',
       'Production solaire': 0,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '5h',
       'Production solaire': 0,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '6h',
       'Production solaire': 0,
       'Consommation réseau': 0.2,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '7h',
       'Production solaire': 0.1,
       'Consommation réseau': 0.3,
       'Énergie autoconsommée': 0,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '8h',
       'Production solaire': 0.3,
       'Consommation réseau': 0.4,
       'Énergie autoconsommée': 0.3,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '9h',
       'Production solaire': 0.8,
       'Consommation réseau': 0.6,
       'Énergie autoconsommée': 0.8,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '10h',
       'Production solaire': 0.9,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 0.9,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
     {
       date: '11h',
       'Production solaire': 1.2,
       'Consommation réseau': 0,
       'Énergie autoconsommée': 1.2,
-      'Injection réseau': 0
+      'Énergie stockée': 0
     },
   ];
 
   const chartdata = [
     {
       name: 'Octobre',
-      'Surplus sur le réseau': 288,
+      'Énergie stockée': 288,
     },
     {
       name: 'Novembre',
-      'Surplus sur le réseau': 245,
+      'Énergie stockée': 245,
     },
     {
       name: 'Décembre',
-      'Surplus sur le réseau': 143,
+      'Énergie stockée': 143,
     },
     {
       name: 'Janvier',
-      'Surplus sur le réseau': 181,
+      'Énergie stockée': 181,
     },
     {
       name: 'Fevrier',
-      'Surplus sur le réseau': 251,
+      'Énergie stockée': 251,
     },
     {
       name: 'Mars',
-      'Surplus sur le réseau': 232,
+      'Énergie stockée': 232,
     },
     {
       name: 'Avril',
-      'Surplus sur le réseau': 300,
+      'Énergie stockée': 300,
     },
     {
       name: 'Mai',
-      'Surplus sur le réseau': 300,
+      'Énergie stockée': 300,
     },
     {
       name: 'Juin',
-      'Surplus sur le réseau': 420,
+      'Énergie stockée': 420,
     },
     {
       name: 'Julliet',
-      'Surplus sur le réseau': 500,
+      'Énergie stockée': 500,
     },
     {
       name: 'Août',
-      'Surplus sur le réseau': 400,
+      'Énergie stockée': 400,
     },
     {
       name: 'Septembre',
-      'Surplus sur le réseau': 340,
+      'Énergie stockée': 340,
+    }
+  ];
+
+  const sales = [
+    {
+      name: 'Eau chaude',
+      sales: 0.9,
+    },
+    {
+      name: 'Électroménager',
+      sales: 0.2,
+    },
+    {
+      name: 'Cuisson',
+      sales: 0.4,
+    },
+    {
+      name: 'Audiovisuel',
+      sales: 0.1,
+    },
+    {
+      name: 'Éclairage',
+      sales: 0.3,
+    },
+    {
+      name: 'Autres',
+      sales: 0.7,
+    },
+    {
+      name: 'Chauffage',
+      sales: 1.5,
     }
   ];
   
@@ -177,26 +214,51 @@ function valueFormatter(number) {
   };
 
 const AllCharts = () => {
+
+
     
     return (
 
         <div className="allCharts">
+            <div className="div-title-charts">
+              <h1><span className="span-title"></span>Home<span className="span-title"></span>Stora<img src={logo2} className="img-logo"></img>e</h1>
+            </div>
             <div className="box b1">
                 <div className="b1-box">
                     <BarChart
                     data={data}
                     index="date"
-                    categories={['Injection réseau','Consommation réseau', 'Énergie autoconsommée','Production solaire']}
+                    categories={['Énergie stockée','Consommation réseau', 'Énergie autoconsommée','Production solaire']}
                     colors={["orange",'blue','green',"yellow"]}
                     valueFormatter={dataFormatter}
                     yAxisWidth={60}
-                    className="mt-6 hidden h-60 sm:block"
+                    className="mt-6 hidden h-60 sm:block main-chart"
                     />
                 </div>
 
                 <div className="b2">
                     <div className="b2-box">
-                        <div className="b2-boxes dividerbox">
+                      <div className="b2-boxes dividerbox">
+                              {/* <p className="text-card text-card-above">dont :</p> */}
+                              <div className="b4-box2">
+                                <div className="flex justify-start space-x-5 items-center">
+                                  <div className="div-svg electric-tower-div">
+                                    <img src={battery} alt="Ejemplo" className="img-svg"/>
+
+                                  </div>
+                                    <div>
+                                    <p className="text-card">
+                                        Énergie stockée
+                                    </p>
+                                    <p className="text-card">
+                                        0kWh
+                                    </p>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+
+                        <div className="b2-boxes ">
                             <div className="b4-box2">
                               <div className="flex justify-start space-x-5 items-center">
                                   <div className="div-svg solar-panel-div">
@@ -214,25 +276,8 @@ const AllCharts = () => {
                             </div>
                             <p className="text-card text-card-below">Consommé sur la période, soit 6,47 km en voiture électrique</p>
                         </div>
-                        <div className="b2-boxes">
-                            <p className="text-card text-card-above">dont :</p>
-                            <div className="b4-box2">
-                              <div className="flex justify-start space-x-5 items-center">
-                                <div className="div-svg electric-tower-div">
-                                  <img src={electricTower} alt="Ejemplo" className="img-svg"/>
 
-                                </div>
-                                  <div>
-                                  <p className="text-card">
-                                      Injection réseau
-                                  </p>
-                                  <p className="text-card">
-                                      0kWh
-                                  </p>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div className="b2-box">
                         <div className="b2-boxes dividerbox">
@@ -255,7 +300,7 @@ const AllCharts = () => {
                             <p className="text-card text-card-below">Consommé sur la période, soit 11,18 km en voiture électrique</p>
                         </div>
                         <div className="b2-boxes">
-                            <p className="text-card text-card-above">dont :</p>
+                            {/* <p className="text-card text-card-above">dont :</p> */}
                             <div className="b4-box2">
                               <div className="flex justify-start space-x-5 items-center">
                                   <div className="div-svg arrows-vertical-div">
@@ -297,60 +342,65 @@ const AllCharts = () => {
             <div className="box b3">
                 <div className="b3-box title">
                     <h3>Récapitulatif de mois en cours</h3>
-                    <p>Analysez votre énergie autoconsommée, économies et injection sur le réseau du mois en cours: </p>
+                    {/* <p>Analysez votre énergie autoconsommée, économies et énergie stockée sur la batterie du mois en cours: </p> */}
                 </div>
-                <div className="b3-box">
-                    <div className="flex justify-start space-x-5 items-center">
-                        <ProgressCircle value={62.8} size="lg" color="violet">
-                        <span className="text-xs font-medium text-slate-700">62,8%</span>
-                        </ProgressCircle>
-                        <div>
-                        <p className="text-card">
-                            Énergie autoconsommée grâce au solaire
-                        </p>
-                        <p className="text-card">
-                            108,2kWh
-                        </p>
-                        </div>
-                    </div>
+                <div className="progress-circles">
+                  <div className="b3-box progress-circle">
+                      <div className="flex justify-start space-x-5 items-center">
+                          <ProgressCircle value={62.8} size="lg" color="violet">
+                          <span className="text-xs font-medium text-slate-700">62,8%</span>
+                          </ProgressCircle>
+                          <div>
+                          <p className="text-card">
+                              Énergie autoconsommée grâce au solaire
+                          </p>
+                          <p className="text-card">
+                              108,2kWh
+                          </p>
+                          </div>
+                      </div>
 
-                </div>
-                <div className="b3-box">
-                    <div className="flex justify-start space-x-5 items-center">
-                        <ProgressCircle value={71.4} size="lg" color="blue">
-                        <span className="text-xs font-medium text-slate-700">71,4%</span>
-                        </ProgressCircle>
-                        <div>
-                        <p className="text-card">
-                            Économie sur ma facture
-                        </p>
-                        <p className="text-card">
-                            108,2kWh
-                        </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="b3-box"> 
-                    <div className="flex justify-start space-x-5 items-center">
-                        <ProgressCircle value={37.2} size="lg" color="red">
-                        <span className="text-xs font-medium text-slate-700">37,2%</span>
-                        </ProgressCircle>
-                        <div>
-                        <p className="text-card">
-                            Injection sur le réseau
-                        </p>
-                        <p className="text-card">
-                            64kWh
-                        </p>
-                        </div>
-                    </div>
+                  </div>
+                  <div className="b3-box progress-circle">
+                      <div className="flex justify-start space-x-5 items-center">
+                          <ProgressCircle value={71.4} size="lg" color="blue">
+                          <span className="text-xs font-medium text-slate-700">71,4%</span>
+                          </ProgressCircle>
+                          <div>
+                          <p className="text-card">
+                              Économie sur ma facture
+                          </p>
+                          <p className="text-card">
+                              108,2kWh
+                          </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="b3-box progress-circle"> 
+                      <div className="flex justify-start space-x-5 items-center">
+                          <ProgressCircle value={37.2} size="lg" color="red">
+                          <span className="text-xs font-medium text-slate-700">37,2%</span>
+                          </ProgressCircle>
+                          <div>
+                          <p className="text-card">
+                              Énergie stockée
+                          </p>
+                          <p className="text-card">
+                              64kWh
+                          </p>
+                          </div>
+                      </div>
+                  </div>
+
+
                 </div>
             </div>
 
             <div className="box b4">
                 <div className="b4-box title">
                     <h3>Quelques chiffres du mois en cours</h3>
-                    <p>Depuis le début du mois vous avez produit 172,2 kWh d'énergie, soit: </p>
+                    <br></br>
+                    <p>Depuis le début du mois vous avez reduit 172,2 kWh d'énergie, soit: </p>
                 </div>
                 <div className="b4-box b4-boxes">
                     <div className="b4-box2">
@@ -363,18 +413,19 @@ const AllCharts = () => {
                             <p className="text-card">
                             2,41 kg
                             </p>
+                            
                             </div>
                         </div>
                     </div>
                     <div className="b4-box2">
                         <div className="flex justify-start space-x-5 items-center">
-                            <img src={washingMachine} alt="Ejemplo" />
+                            <img src={bike} alt="Ejemplo" />
                             <div>
                             <p className="text-card">
-                                Cycles lave-linge
+                              Kilomètres en vélo
                             </p>
                             <p className="text-card">
-                                344 cycles
+                                275 Km
                             </p>
                             </div>
                         </div>
@@ -390,17 +441,18 @@ const AllCharts = () => {
                                 1012,94 km
                             </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="box b5">
-                <h3>Injection de surplus les 12 derniers mois</h3>
+                <h3>Énergie stockée les 12 derniers mois</h3>
                 <BarChart
                     data={chartdata}
                     index="name"
-                    categories={['Surplus sur le réseau']}
+                    categories={['Énergie stockée']}
                     colors={['amber']}
                     valueFormatter={dataFormatter}
                     yAxisWidth={60}
@@ -409,6 +461,38 @@ const AllCharts = () => {
                     layout="hola"
                 />
             </div>
+
+            <div className="box b6">
+                <div className="b3-box title">
+                    <h3>Répartition énergetique</h3>
+                    {/* <p>Analysez votre énergie autoconsommée, économies et énergie stockée sur la batterie du mois en cours: </p> */}
+                </div>
+                <div className="progress-circles progress-circle-b6">
+                  <div className="b3-box">
+                      <div className="flex justify-start space-x-5 items-center donut-chart-div">
+                      <div className="flex items-center justify-center space-x-6 donut-chart-div ">
+                          <DonutChart
+                            data={sales}
+                            category="sales"
+                            index="name"
+                            valueFormatter={dataFormatter}
+                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                            className="w-40 donut-chart"
+                          />
+                          <Legend
+                            categories={['Eau chaude', 'Électroménager', 'Cuisson', 'Audiovisuel', 'Éclairage', 'Autres', 'Chauffage']}
+                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                            className="max-w-xs"
+                          />
+
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+
+            
     </div>
     );
 }

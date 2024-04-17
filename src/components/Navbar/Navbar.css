@@ -111,3 +111,6 @@ input[type="checkbox"]{
 .logo{
   height: 60px;
 }
+.navbar{
+  padding: 0;
+}
