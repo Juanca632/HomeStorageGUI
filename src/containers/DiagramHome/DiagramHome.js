@@ -101,21 +101,7 @@ const DiagramHome = () => {
 
     return (
       <div className="home">
-          <div className="home-box1">
-              <div className="consumption">
-                <ItemDiagramHome color="dark-grey" title="Consommation" info="1691W" infoConsumption={true}>
-                <SparkAreaChart
-                    data={chartdata}
-                    categories={['Benchmark']}
-                    index={'month'}
-                    colors={['red']}
-                    className="h-8 w-20 sm:h-10 sm:w-36 consumption-chart"
-                    showAnimation="true"
-                />
-                </ItemDiagramHome>
-              </div>
-          </div>
-          <div className="home-box2">
+        <div className="home-box2">
               <div className="solar-panel">
                 <ItemDiagramHome color="yellow" title="Panneau Solaire" info="847W">
                 <SparkAreaChart
@@ -156,6 +142,21 @@ const DiagramHome = () => {
                 <ItemLinks className="horizontal"/>
               </div>                  
           </div>
+          <div className="home-box1">
+              <div className="consumption">
+                <ItemDiagramHome color="dark-grey" title="Consommation" info="1691W" infoConsumption={true}>
+                <SparkAreaChart
+                    data={chartdata}
+                    categories={['Benchmark']}
+                    index={'month'}
+                    colors={['red']}
+                    className="h-8 w-20 sm:h-10 sm:w-36 consumption-chart"
+                    showAnimation="true"
+                />
+                </ItemDiagramHome>
+              </div>
+          </div>
+          
       </div>
         // <React.Fragment>
 
