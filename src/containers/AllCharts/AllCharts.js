@@ -19,6 +19,15 @@ import battery from "../../assets/img/battery.svg"
 import logo2 from "../../assets/img/logo2.png"
 import bike from "../../assets/img/bike.svg"
 
+import eolic from "../../assets/mix-carbone/eolic.svg"
+import solar from "../../assets/mix-carbone/solar.svg"
+import coal from "../../assets/mix-carbone/coal.svg"
+import nuclear from "../../assets/mix-carbone/nuclear.svg"
+import hydraulic from "../../assets/mix-carbone/hydraulic.svg"
+import gas from "../../assets/mix-carbone/gas.svg"
+import fuel from "../../assets/mix-carbone/fuel.svg"
+import bio from "../../assets/mix-carbone/bio.svg"
+
 const data = [
     {
       date: '0h',
@@ -215,6 +224,10 @@ function valueFormatter(number) {
 
 const AllCharts = () => {
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
     
     return (
@@ -403,7 +416,7 @@ const AllCharts = () => {
                     <p>Depuis le début du mois vous avez reduit 172,2 kWh d'énergie, soit: </p>
                 </div>
                 <div className="b4-box b4-boxes">
-                    <div className="b4-box2">
+                    <div className="b4-box2 mix-carbone">
                         <div className="flex justify-start space-x-5 items-center">
                             <img src={co2} alt="Ejemplo" />
                             <div>
@@ -415,6 +428,88 @@ const AllCharts = () => {
                             </p>
                             
                             </div>
+                        </div>
+
+                        <div>
+                          <Button variant="success" onClick={handleShow}>
+                            Mix carbone
+                          </Button>
+
+                          <Modal show={show} onHide={handleClose} centered={true}>
+                            <Modal.Header closeButton>
+                              <Modal.Title>Mon empreinte carbone: 2,41 Kg</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                              <p className='empreinte-carbone-subtitle'>Décomposition par filière</p>
+                              <div className='empreinte-carbone'>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={bio} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Bioénergies</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>580 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={fuel} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Fioul</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>160 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={gas} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Gaz</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>420 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={hydraulic} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Hydraulique</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>71 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={nuclear} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Nucléaire</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>300 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={coal} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Charbon</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>0 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={solar} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Solaire</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>190 g</p>
+                                </div>
+                                <div className='empreinte-carbone-card'>
+                                  <div className='empreinte-carbone-div'>
+                                    <img src={eolic} alt="Ejemplo" className='empreinte-carbone-img'/>
+                                    <p>Éolien</p>
+                                  </div>
+                                  <p className='empreinte-carbone-p'>160 g</p>
+                                </div>
+                       
+                              </div>
+                              <div className='empreinte-carbone-info'>
+                                <p>Comment est-elle calculée ?</p>
+                                <p>L'électricité que vous utilisez provient d'un mix énergetique français en constante évolution, composé notamment d'énergies renouvelables comme le solaire et l'éolien, ainsi que du nucléaire.
+                                  Lorsque ces sources dominent, votre empreinte carbone est réduite.
+                                  <br></br>
+                                  Cependent, lors des périodes de forte demande, principalement pendent les périodes sombres et froides les énergies fossiles prennent le relais, augmentant ainsi vos émissions de CO2
+                                </p>
+                              </div>
+                            </Modal.Body>
+                          </Modal>
                         </div>
                     </div>
                     <div className="b4-box2">
