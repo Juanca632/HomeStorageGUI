@@ -1,6 +1,5 @@
 .overview{
     position: relative;
-    background-color: rgb(227, 162, 162);
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -10,7 +9,6 @@
 .overview-box{
     display: flex;
     justify-content: center;
-    border: 1px solid black;
 }
 .overview-box1{
     position: relative;
@@ -22,10 +20,42 @@
     height: 100%;
     width: 100%;
 }
+.progress-circle-div{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.progress-circle-box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-circle-box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-circle-box3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-circle-box1 img{
+    height: 50px;
+}
+.progress-circle-box1 p{
+    font-weight: var(--bold);
+    font-size: var(--lg);
+}
+.progress-circle-box3 p{
+    font-size: var(--md);
+}
+.emoji{
+    height: 15vh ;
+}
 .circular-progressbar1{
     position: absolute;
     top: 50%; /* Mueve el elemento hacia abajo un 50% de la altura del contenedor */
-    left: calc(50% + 15vw); /* Mueve el elemento hacia la derecha un 50% de la anchura del contenedor */
+    left: calc(50% + 12vw); /* Mueve el elemento hacia la derecha un 50% de la anchura del contenedor */
     transform: translate(-50%, -50%); /* Centra el elemento horizontal y verticalmente */
     
     
@@ -33,6 +63,42 @@
 .circular-progressbar2 {
     position: absolute;
     top: 50%; /* Mueve el elemento hacia abajo un 50% de la altura del contenedor */
-    left: calc(50% - 15vw); /* Calcula el desplazamiento para centrar y luego mover 30vw hacia la derecha */
+    left: calc(50% - 12vw); /* Calcula el desplazamiento para centrar y luego mover 30vw hacia la derecha */
     transform: translate(-50%, -50%) scaleX(-1); /* Invierte horizontalmente el elemento y lo centra horizontal y verticalmente */
+}
+.overview-box1-info{
+    width: 180px;
+    position: absolute;
+    top: 50%; /* Mueve el elemento hacia abajo un 50% de la altura del contenedor */
+    left: calc(50% + 7vw); /* Calcula el desplazamiento para centrar y luego mover 30vw hacia la derecha */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.overview-box2-info{
+    width: 180px;
+    position: absolute;
+    top: 50%; /* Mueve el elemento hacia abajo un 50% de la altura del contenedor */
+    left: calc(50% - 7vw); /* Calcula el desplazamiento para centrar y luego mover 30vw hacia la derecha */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.overview-box1 p{
+    font-size: var(--lg);
+}
+.overview-box2 p{
+    font-size: var(--lg);
+}
+.overview-box1 img{
+    height: 50px;
+}
+
+.overview-box2 img{
+    height: 50px;
 }

@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     min-height: 100vh;
-    grid-template-columns: 33% 1fr 1fr;
+    grid-template-columns: 33% auto auto;
     gap: 10px;
     width: 100%;
     margin: 0 auto;
@@ -71,8 +71,7 @@
     grid-column: 1 / span 1;
     grid-row: 4 / span 2;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    grid-template-rows: 40% 1fr;
 }
 .b5{
     grid-column: 2 / span 2;
@@ -82,7 +81,14 @@
     align-items: center;
 }
 .b6{
-    grid-column: 2 / span 2;
+    grid-column: 3 / span 1;
+    grid-row: 5 / span 1;
+    
+    display: flex;
+    flex-direction: column;
+}
+.b7{
+    grid-column: 2 / span 1;
     grid-row: 5 / span 1;
 }
 
@@ -159,7 +165,7 @@
 .b4-boxes{
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: flex-start;
 }
@@ -255,8 +261,12 @@
 .donut-chart{
     height: 200px;
     width: 200px;
+    margin-bottom: 10px;
 }
 .donut-chart-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 100%;
 }
 .dark\:fill-dark-tremor-content-emphasis {
@@ -268,4 +278,7 @@
 }
 p{
     margin-bottom: 0 !important;
+}
+.tremor-Legend-root{
+    padding: 0px;
 }

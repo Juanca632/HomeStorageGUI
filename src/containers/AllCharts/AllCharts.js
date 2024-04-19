@@ -27,6 +27,7 @@ import hydraulic from "../../assets/mix-carbone/hydraulic.svg"
 import gas from "../../assets/mix-carbone/gas.svg"
 import fuel from "../../assets/mix-carbone/fuel.svg"
 import bio from "../../assets/mix-carbone/bio.svg"
+import heating from "../../assets/img/heating.svg"
 
 const data = [
     {
@@ -166,6 +167,36 @@ const data = [
     }
   ];
 
+  const productionType = [
+    {
+      name: 'Production de pétrole fossile',
+      sales: 0.9,
+    },
+    {
+      name: 'Production nucléaire',
+      sales: 0.2,
+    },
+    {
+      name: 'Production solaire',
+      sales: 0.4,
+    },
+    {
+      name: 'Production de déchets',
+      sales: 0.1,
+    },
+    {
+      name: "production d'énergie éolienne",
+      sales: 0.3,
+    },
+    {
+      name: "génération de réservoirs d'eau hydroélectrique",
+      sales: 0.7,
+    },
+    {
+      name: 'Autres',
+      sales: 1.5,
+    }
+  ];
   const sales = [
     {
       name: 'Eau chaude',
@@ -220,6 +251,15 @@ function valueFormatter(number) {
   
     // Concatena "kWh" al valor formateado
     return `${formattedValue} kWh`;
+  };
+
+  const totalValue = productionType.reduce((acc, curr) => acc + curr.sales, 0);
+
+  console.log("La suma de todas las ventas es:", totalValue);
+
+  const dataFormatter2 = (number) => {
+    const percentage = (number / totalValue) * 100;
+    return `${percentage.toFixed(2)}%`;
   };
 
 const AllCharts = () => {
@@ -539,6 +579,20 @@ const AllCharts = () => {
 
                         </div>
                     </div>
+                    <div className="b4-box2">
+                        <div className="flex justify-start space-x-5 items-center">
+                            <img src={heating} alt="Ejemplo" />
+                            <div>
+                            <p className="text-card">
+                                Chauffage électrique
+                            </p>
+                            <p className="text-card">
+                                12.5 h
+                            </p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -576,6 +630,36 @@ const AllCharts = () => {
                           />
                           <Legend
                             categories={['Eau chaude', 'Électroménager', 'Cuisson', 'Audiovisuel', 'Éclairage', 'Autres', 'Chauffage']}
+                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                            className="max-w-xs"
+                          />
+
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+            <div className="box b7">
+                <div className="b3-box title">
+                    <h3>Génération par type de production</h3>
+                    {/* <p>Analysez votre énergie autoconsommée, économies et énergie stockée sur la batterie du mois en cours: </p> */}
+                </div>
+                <div className="progress-circles progress-circle-b6">
+                  <div className="b3-box">
+                      <div className="flex justify-start space-x-5 items-center donut-chart-div">
+                      <div className="flex items-center justify-center space-x-6 donut-chart-div ">
+                          <DonutChart
+                            data={productionType}
+                            category="sales"
+                            index="name"
+                            variant="pie"
+                            valueFormatter={dataFormatter2}
+                            colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                            className="w-40 donut-chart"
+                          />
+                          <Legend
+                            categories={['Production de pétrole fossile', 'Production nucléaire', "Production solaire", 'Production de déchets ', "Production d'énergie éolienne", 'Autres']}
                             colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
                             className="max-w-xs"
                           />
