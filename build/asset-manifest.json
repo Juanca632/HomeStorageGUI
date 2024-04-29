@@ -1,13 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.ed54c99e.css",
-    "main.js": "/static/js/main.8963f47b.js",
+    "main.css": "/static/css/main.363c1a7b.css",
+    "main.js": "/static/js/main.8a0cccf0.js",
+    "static/media/emoji.png": "/static/media/emoji.15fe9a58a2728e47dd81.png",
+    "static/media/logo2.png": "/static/media/logo2.3d7b0f19dd0f93c14c62.png",
+    "static/media/logo.png": "/static/media/logo.cf269fd458b4d0691e95.png",
+    "static/media/eolic.svg": "/static/media/eolic.e19cc12b56ea89ad0af3db156e6a682d.svg",
+    "static/media/co2.svg": "/static/media/co2.3bedb60cb017a2ae2b36ffea9cff0ee2.svg",
+    "static/media/hydraulic.svg": "/static/media/hydraulic.c4ad897eaf049f0aff5f49eec0ff62c1.svg",
+    "static/media/washing-machine.svg": "/static/media/washing-machine.501805707e4e9028f90803de195cf49a.svg",
+    "static/media/fuel.svg": "/static/media/fuel.97da0a807a1b491e8d5241f00162d662.svg",
+    "static/media/bike.svg": "/static/media/bike.924e9935502e3b806a1050439443c774.svg",
+    "static/media/nuclear.svg": "/static/media/nuclear.9b911b365bd28a490e566025317c0787.svg",
+    "static/media/arrows-circle.svg": "/static/media/arrows-circle.2c427cdaf469839a322c968f622da8d7.svg",
+    "static/media/bio.svg": "/static/media/bio.d78e2ee7dbd5d9da042ef9adc190a8f9.svg",
+    "static/media/electric-tower.svg": "/static/media/electric-tower.a726c1f58c898fbda6761afb747dd66d.svg",
+    "static/media/coal.svg": "/static/media/coal.f91c3c571adaa8bcf2371785e57bb4bb.svg",
+    "static/media/gas.svg": "/static/media/gas.b842274f00d4587d386c21f70a50f856.svg",
+    "static/media/heating.svg": "/static/media/heating.4f4c63a487725dcdad834c34efa364dd.svg",
+    "static/media/solar.svg": "/static/media/solar.a96e280488bc470ee91de4c70cd93d0c.svg",
+    "static/media/solar-panel.svg": "/static/media/solar-panel.8a429855b39f64a61e074a09e8af6284.svg",
+    "static/media/battery.svg": "/static/media/battery.5143cebdfd6600e53f42320e1afae115.svg",
+    "static/media/car.svg": "/static/media/car.cd1b98d2afacc09cd5a5b81c91f895f9.svg",
+    "static/media/arrows-vertical.svg": "/static/media/arrows-vertical.74f0a07885dda735624e2d7889a9cee1.svg",
     "index.html": "/index.html",
-    "main.ed54c99e.css.map": "/static/css/main.ed54c99e.css.map",
-    "main.8963f47b.js.map": "/static/js/main.8963f47b.js.map"
+    "static/media/electric-energy.svg": "/static/media/electric-energy.1092a3dee7c9107c1aeda0794dfadfc4.svg",
+    "main.363c1a7b.css.map": "/static/css/main.363c1a7b.css.map",
+    "main.8a0cccf0.js.map": "/static/js/main.8a0cccf0.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed54c99e.css",
-    "static/js/main.8963f47b.js"
+    "static/css/main.363c1a7b.css",
+    "static/js/main.8a0cccf0.js"
   ]
 }
