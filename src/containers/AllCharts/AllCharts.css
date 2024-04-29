@@ -282,3 +282,6 @@ p{
 .tremor-Legend-root{
     padding: 0px;
 }
+.title-span-charts{
+    color: var(--yellow);
+}

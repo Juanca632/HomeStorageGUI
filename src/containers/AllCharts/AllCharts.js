@@ -274,7 +274,7 @@ const AllCharts = () => {
 
         <div className="allCharts">
             <div className="div-title-charts">
-              <h1><span className="span-title"></span>Home<span className="span-title"></span>Stora<img src={logo2} className="img-logo"></img>e</h1>
+              <h1><span className='title-span-charts'>SUN</span>IA</h1>
             </div>
             <div className="box b1">
                 <div className="b1-box">

@@ -12,7 +12,7 @@
 }
 .container h3{
     font-weight: var(--bold);
-    font-size: 17px;
+    font-size: 18px;
 
 }
 .HomeStorage-card-logo{
@@ -35,4 +35,8 @@
     justify-content: space-around;
     align-items: center ;
 
+}
+
+.title-sunia-span{
+    color: var(--yellow);
 }

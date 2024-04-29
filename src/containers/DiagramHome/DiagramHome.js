@@ -115,7 +115,7 @@ const DiagramHome = () => {
                 </ItemDiagramHome>
               </div>
               <div className="homeStorage">
-                <ItemDiagramHome color="black" title="HomeStorage" logo={true}>
+                <ItemDiagramHome color="black" title="SUNIA" logo={true}>
                     <ProgressCircle value={75} size="xl" color="lime" showAnimation="true">
                         <span className="percentage-battery">75%</span>
                     </ProgressCircle>

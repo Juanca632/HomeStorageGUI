@@ -8,7 +8,11 @@ const ItemDiagramHome = (props) => {
     return (
         <div className='container' style={{ backgroundColor: `var(--${props.color})` }}>
                 <div className="HomeStorage-card-logo">
-                    <h3>{props.title}</h3>
+                    {props.logo ? (
+                        <h3 className='title-sunia'><span className='title-sunia-span'>SUN</span>IA</h3>
+                    ): (
+                        <h3>{props.title}</h3>
+                    )}
                     {props.logo && <img src={logo2} alt="logo" className="logo-HomeStorage"></img>}
                 </div>
                 <p>{props.info}</p>
