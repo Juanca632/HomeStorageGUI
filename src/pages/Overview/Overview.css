@@ -102,3 +102,9 @@
 .overview-box2 img{
     height: 50px;
 }
+.savings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

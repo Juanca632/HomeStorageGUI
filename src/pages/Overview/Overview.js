@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import { ProgressCircle, SparkAreaChart, AreaChart } from '@tremor/react';
@@ -9,6 +9,41 @@ import emoji from "../../assets/img/emoji.png"
 import battery from "../../assets/img/battery.svg"
 import electricTower from "../../assets/img/electric-tower.svg"
 import solarPanel from "../../assets/img/solar-panel.svg"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import {  DonutChart, Legend } from '@tremor/react';
+
+const sales = [
+    {
+      name: 'Eau chaude',
+      sales: 9.5,
+    },
+    {
+      name: 'Électroménager',
+      sales: 16.3,
+    },
+    {
+      name: 'Cuisson',
+      sales: 0.4,
+    },
+    {
+      name: 'Audiovisuel',
+      sales: 1.3,
+    },
+    {
+      name: 'Éclairage',
+      sales: 4.2,
+    },
+    {
+      name: 'Autres',
+      sales: 3.4,
+    },
+    {
+      name: 'Chauffage',
+      sales: 16.8,
+    }
+  ];
 
 
 const Overview = () => {
@@ -22,8 +57,27 @@ const Overview = () => {
       },
     });
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const dataFormatter = (number) => {
+        // Formatea el valor numérico
+        const formattedValue = Intl.NumberFormat('en-US', {
+          maximumFractionDigits: 1,
+          notation: 'compact',
+          compactDisplay: 'short',
+        }).format(number);
+      
+        // Concatena "kWh" al valor formateado
+        return `€${formattedValue}`;
+      };
+
 
     return (
+        
+
         
         <div {...swipeHandlers} className='overview'>
 
@@ -65,9 +119,39 @@ const Overview = () => {
                             <div className='progress-circle-box2'>
                                 <img src={emoji} alt="emoji" className='emoji'></img>
                             </div>
-                            <div className='progress-circle-box3'>
-                                <p>52,3 V</p>
-                                <p>2.7 A</p>
+                            <div className='savings'>
+                                <Button variant="success" onClick={handleShow}>
+                                    Mon epargne
+                                </Button>
+
+                                <Modal show={show} onHide={handleClose} centered={true}>
+                                    <Modal.Header closeButton>
+                                    <Modal.Title>Mon epargne en cours du mois</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                    <div className="b3-box">
+                                        <div className="flex justify-start space-x-5 items-center donut-chart-div">
+                                        <div className="flex items-center justify-center space-x-6 donut-chart-div ">
+                                            <DonutChart
+                                                data={sales}
+                                                category="sales"
+                                                index="name"
+                                                valueFormatter={dataFormatter}
+                                                colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                                                className="w-40 donut-chart"
+                                            />
+                                            <Legend
+                                                categories={['Eau chaude', 'Électroménager', 'Cuisson', 'Audiovisuel', 'Éclairage', 'Autres', 'Chauffage']}
+                                                colors={['blue', 'cyan', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
+                                                className="max-w-xs"
+                                            />
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </Modal.Body>
+                                </Modal>
                             </div>
 
                         </div>
