@@ -5,7 +5,7 @@ import { ProgressCircle, SparkAreaChart, AreaChart } from '@tremor/react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css";
 import "./Overview.css"
-import emoji from "../../assets/img/emoji.png"
+import emoji from "../../assets/img/gif.gif"
 import battery from "../../assets/img/battery.svg"
 import electricTower from "../../assets/img/electric-tower.svg"
 import solarPanel from "../../assets/img/solar-panel.svg"
@@ -17,31 +17,31 @@ import {  DonutChart, Legend, BarChart } from '@tremor/react';
 const data = [
     {
       date: 'Janvier',
-      'Epargne': 20,
+      'Gain': 20,
     },
     {
       date: 'Fevrier',
-      'Epargne': 40,
+      'Gain': 40,
     },
     {
       date: 'Mars',
-      'Epargne': 10,
+      'Gain': 10,
     },
     {
       date: 'Avril',
-      'Epargne': 5,
+      'Gain': 5,
     },
     {
       date: 'Mai',
-      'Epargne': 15,
+      'Gain': 15,
     },
     {
       date: 'June',
-      'Epargne': 8,
+      'Gain': 8,
     },
     {
       date: 'Julliet',
-      'Epargne': 2,
+      'Gain': 2,
     }
   ];
 const productionType = [
@@ -91,7 +91,7 @@ const Overview = () => {
     return (
         <div className='overview' {...swipeHandlers}>
             <div className='overview-div-columns'>
-                <div className='overview-div-rows overview-div-rows overview-row-1'>
+                <div className='overview-div-rows overview-row-1'>
                 <img src={emoji} alt="Emoji" className='emoji'/>
                 <p className='p-emoji'>Tout marche bien!</p>
                 </div>
@@ -115,20 +115,23 @@ const Overview = () => {
             </div>
             <div className='overview-div-columns'>
                 <div className='overview-div-rows overview-row-3'>
-                    <h3 className='h3-overview'>Epargne</h3>
+                    <h3 className='h3-overview'>Gain</h3>
                     <ProgressCircle value={65} size="xl" color="lime" showAnimation="true">
                         <span className="percentage-battery-overview">65%</span>
                     </ProgressCircle>
                     <p className='p-savings'>€18,5 / €27</p>
-                    <BarChart
-                        data={data}
-                        index="date"
-                        categories={['Epargne']}
-                        colors={["green"]}
-                        valueFormatter={dataFormatter}
-                        yAxisWidth={60}
-                        className="mt-6 hidden h-60 sm:block main-chart chart-overview"
-                        />
+                    <div className='barchart-overview'>
+                      <BarChart
+                          data={data}
+                          index="date"
+                          categories={['Gain']}
+                          colors={["green"]}
+                          valueFormatter={dataFormatter}
+                          yAxisWidth={60}
+                          className="mt-6 hidden h-60 sm:block main-chart chart-overview"
+                          />
+
+                    </div>
                 </div>
 
             </div>
