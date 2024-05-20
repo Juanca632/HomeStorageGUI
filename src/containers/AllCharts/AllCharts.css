@@ -14,17 +14,7 @@
     grid-column: 2 / span 1;
 
 }
-.div-title-charts h1{
-    text-align: center;
-    font-size: var(--xxl);
-    font-weight: var(--bold);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.span-title{
-    color: var(--orange);
-}
+
 .img-logo{
     height: 40px;
     margin-top: 4px;
@@ -281,10 +271,4 @@ p{
 }
 .tremor-Legend-root{
     padding: 0px;
-}
-.title-span-charts{
-    color: var(--yellow);
-}
-.title-span-charts-2{
-    color: var(--darkblue);
 }

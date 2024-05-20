@@ -274,7 +274,7 @@ const AllCharts = () => {
 
         <div className="allCharts">
             <div className="div-title-charts">
-              <h1><span className='title-span-charts'>SUN</span><span className='title-span-charts-2'>IA</span></h1>
+              <h1>Mes Graphiques</h1>
             </div>
             <div className="box b1">
                 <div className="b1-box">

@@ -7,7 +7,7 @@ import { Weather } from '../../components/Weather/Weather';
 const ContainerPanelHome = () => {
     return (
         <div className='containerPanelHome'>
-            <Weather/>
+            {/* <Weather/> */}
             <DiagramHome/>
         </div>
     );

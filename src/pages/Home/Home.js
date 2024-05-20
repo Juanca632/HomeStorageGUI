@@ -11,12 +11,12 @@ const Home = () => {
     const swipeHandlers = useSwipeable({
       onSwipedRight: () => {
         // Navegar a la ruta "/charts" al detectar un gesto de swipe hacia la derecha
-        navigate('/charts');
+        navigate('/');
       },
-      onSwipedLeft: () => {
-        // Navegar a la ruta "/charts" al detectar un gesto de swipe hacia la derecha
-        navigate('/Overview');
-      }
+      // onSwipedLeft: () => {
+      //   // Navegar a la ruta "/charts" al detectar un gesto de swipe hacia la derecha
+      //   navigate('/Overview');
+      // }
     });
   
     return (

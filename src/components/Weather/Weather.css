@@ -1,9 +1,8 @@
 .weather{
-    top: 20px;
-    right: 20px;
-    width: 30%;
-    height: 20%;
-    position: absolute;
+    /* top: 20px;
+    right: 20px; */
+    width: 300px;
+    height: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -13,9 +13,9 @@ const App = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route exact path="/" element={<Home/>} /> 
+            <Route exact path="/" element={<Overview/>} /> 
             <Route exact path="/charts" element={<Charts/>} /> 
-            <Route exact path="/overview" element={<Overview/>} /> 
+            <Route exact path="/diagram" element={<Home/>} /> 
             <Route exact path="/charge-discharge-hours" element={<ChargeDischargeHours/>} /> 
             <Route exact path="*" element={<NotFound/>} /> 
           </Routes>

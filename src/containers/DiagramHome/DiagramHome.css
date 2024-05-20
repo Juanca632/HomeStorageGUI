@@ -19,7 +19,7 @@
 }
 .home-box1{
     display: grid;
-    grid-template-rows: calc(20% + 40px) 1fr;
+    grid-template-rows: 100px 1fr;
 }
 .consumption{
     grid-row: 2 / span 1;
