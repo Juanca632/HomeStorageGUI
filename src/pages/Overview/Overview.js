@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
-import { ProgressCircle, SparkAreaChart, AreaChart } from '@tremor/react';
+import { ProgressCircle, SparkAreaChart, AreaChart, ProgressBar, Card } from '@tremor/react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import "react-circular-progressbar/dist/styles.css";
 import "./Overview.css"
 import emoji from "../../assets/img/gif.gif"
+import sun from "../../assets/img/sun.png"
+import clock from "../../assets/img/clock.png"
 import battery from "../../assets/img/battery.svg"
 import electricTower from "../../assets/img/electric-tower.svg"
 import solarPanel from "../../assets/img/solar-panel.svg"
@@ -57,7 +59,7 @@ const productionType = [
       sales: 80,
     },
     {
-      name: 'Heure Cleuse/Pleine',
+      name: 'Heure Creuse/Pleine',
       sales: 20,
     }
   ];
@@ -126,7 +128,7 @@ const Overview = () => {
                             className="w-40 donut-chart donut-chart-overview"
                           />
                           <Legend
-                            categories={['Solaire','Heure Cleuse/Pleine']}
+                            categories={['Solaire','Heure Creuse/Pleine']}
                             colors={['yellow', 'blue', 'indigo', 'violet', 'fuchsia', 'red', 'green']}
                             className="max-w-xs"
                           />
@@ -138,38 +140,74 @@ const Overview = () => {
                   <h1><span className='title-span-overview'>SUN</span><span className='title-span-overview-2'>IA</span></h1>
                 </div>
                 <div className='overview-div-rows overview-row-3'>
-                  <h3 className='h3-overview'>Mes gains du mois</h3>
+                  <h3 className='h3-overview'>Mes objectifs</h3>
+                  <div className='div-info-today'>
+                    <p className='monthly-progress-title'>Aujourd'hui</p>
+                    <div className='savings-info-day'>
+                      <div>
+                        <img src={sun} alt="sun" className='sun-info'/>
+                        <p>
+                          Beaucoup de soleil aujourd'hui, vous avez produit <span className='span-sun-info'>15% plus</span> que d'habitude
+                        </p>
+                      </div>
+                      <div>
+                        <img src={clock} alt="clock" className='clock-info'/>
+                        <p>
+                          Vous avez gagné <span className='span-sun-info'>€1,41</span> pendent les heures creuses
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   <div className='progress-data'>
                     <div className='monthly-progress'>
-                      <ProgressCircle value={65} size="xl" color="lime" showAnimation="true">
-                          <span className="percentage-battery-overview">65%</span>
-                      </ProgressCircle>
-                      <p className='p-savings'>€18,5 / €27</p>
-                      <Button variant="success" onClick={handleShow}>
+                      {/* <ProgressCircle value={65} size="xl" color="lime" showAnimation="true">
+                          <span className="percentage-battery-overview">€18,5</span>
+                      </ProgressCircle> */}
+                      <p className='monthly-progress-title'>Progrès du mois</p>
+                      <Card className="mx-auto max-w-lg">
+                        <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content flex items-center justify-between">
+                          <span className='span-savings'>€18,5 &bull; 68%</span>
+                          <span className='span-savings'>€27</span>
+                        </p>
+                        <ProgressBar value={68} color="teal" className="mt-3" />
+                      </Card>
+
+                      <p className='p-savings'>Les gains sont calculés à partir des heures creuse/pleine et a partir de la production solaire. <span className='span-savings-moreinfo'>Appuyez ici pour voir des calculs</span></p>
+                      <div>
+                      <Button variant="success" onClick={handleShow} className='button-savings'>
                             Voir mois précedents
                       </Button>
-
                           <Modal show={show} onHide={handleClose} centered={true}>
                             <Modal.Header closeButton>
-                              <Modal.Title>...</Modal.Title>
+                              <Modal.Title>Mes gains du mois précedents</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                              Charts
+                              <BarChart
+                            data={data}
+                            index="date"
+                            categories={['Gain']}
+                            colors={["green"]}
+                            valueFormatter={dataFormatter}
+                            yAxisWidth={60}
+                            className="mt-6 hidden h-60 sm:block main-chart chart-overview"
+                            />
                             </Modal.Body>
-                          </Modal>
+                          </Modal>  
+                  </div>
                     </div>
-                    <div className='calendar'>
+                    {/* <div className='calendar'>
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
                           <div className='calendar-div'>
                             <DateCalendar defaultValue={dayjs('2022-04-17')} readOnly views={['day']}/>
                           </div>
                       </LocalizationProvider>
-                    </div>
+                    </div> */}
 
                   </div>
+                  
 
-                    <div className='barchart-overview'>
-                      {/* <BarChart
+                    {/* <div className='barchart-overview'>
+                      <BarChart
                           data={data}
                           index="date"
                           categories={['Gain']}
@@ -177,9 +215,9 @@ const Overview = () => {
                           valueFormatter={dataFormatter}
                           yAxisWidth={60}
                           className="mt-6 hidden h-60 sm:block main-chart chart-overview"
-                          /> */}
+                          />
 
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
