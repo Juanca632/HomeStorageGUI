@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.363c1a7b.css",
-    "main.js": "/static/js/main.8a0cccf0.js",
-    "static/media/emoji.png": "/static/media/emoji.15fe9a58a2728e47dd81.png",
+    "main.css": "/static/css/main.f674d6ed.css",
+    "main.js": "/static/js/main.046531e6.js",
+    "static/media/gif.gif": "/static/media/gif.4e64e3a2e6541097b66b.gif",
+    "static/media/clock.png": "/static/media/clock.63eecbb2f4d9aebbb91d.png",
     "static/media/logo2.png": "/static/media/logo2.3d7b0f19dd0f93c14c62.png",
     "static/media/logo.png": "/static/media/logo.cf269fd458b4d0691e95.png",
     "static/media/eolic.svg": "/static/media/eolic.e19cc12b56ea89ad0af3db156e6a682d.svg",
@@ -25,11 +26,11 @@
     "static/media/arrows-vertical.svg": "/static/media/arrows-vertical.74f0a07885dda735624e2d7889a9cee1.svg",
     "index.html": "/index.html",
     "static/media/electric-energy.svg": "/static/media/electric-energy.1092a3dee7c9107c1aeda0794dfadfc4.svg",
-    "main.363c1a7b.css.map": "/static/css/main.363c1a7b.css.map",
-    "main.8a0cccf0.js.map": "/static/js/main.8a0cccf0.js.map"
+    "main.f674d6ed.css.map": "/static/css/main.f674d6ed.css.map",
+    "main.046531e6.js.map": "/static/js/main.046531e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.363c1a7b.css",
-    "static/js/main.8a0cccf0.js"
+    "static/css/main.f674d6ed.css",
+    "static/js/main.046531e6.js"
   ]
 }

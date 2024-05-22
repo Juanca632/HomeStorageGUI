@@ -109,15 +109,15 @@ const Overview = () => {
     return (
         <div className='overview' {...swipeHandlers}>
             <div className='overview-div-columns-1'>
-                <div>
+                {/* <div>
                   <Weather/>
-                </div>
+                </div> */}
                 <div className='overview-div-rows overview-row-1'>
                 <img src={emoji} alt="Emoji" className='emoji'/>
                 <p className='p-emoji'>Tout marche bien!</p>
                 </div>
                 <div className='overview-div-rows overview-row-2'>
-                    <p>Mes gains viennent d'où ?</p>
+                    <p className='title-overview-row-2'>Mes gains viennent d'où ?</p>
                         <DonutChart
                             data={productionType}
                             category="sales"
@@ -136,21 +136,27 @@ const Overview = () => {
 
             </div>
             <div className='overview-div-columns-2'>
-                <div className="div-title-overview">
+                {/* <div className="div-title-overview">
                   <h1><span className='title-span-overview'>SUN</span><span className='title-span-overview-2'>IA</span></h1>
-                </div>
+                </div> */}
                 <div className='overview-div-rows overview-row-3'>
-                  <h3 className='h3-overview'>Mes objectifs</h3>
+                  <h3 className='h3-overview'>Mes objectifs <span className='title-span-overview'>SUN</span><span className='title-span-overview-2'>IA</span></h3>
                   <div className='div-info-today'>
                     <p className='monthly-progress-title'>Aujourd'hui</p>
                     <div className='savings-info-day'>
-                      <div>
-                        <img src={sun} alt="sun" className='sun-info'/>
+                      <div className='div-sun-overview'>
+                        <div className='temperature-overview'>
+                          <div>
+                            <p>27° C</p>
+                            <p>Paris</p>  
+                          </div>
+                          <img src={sun} alt="sun" className='sun-info'/>
+                        </div>
                         <p>
                           Beaucoup de soleil aujourd'hui, vous avez produit <span className='span-sun-info'>15% plus</span> que d'habitude
                         </p>
                       </div>
-                      <div>
+                      <div className='div-sun-overview'>
                         <img src={clock} alt="clock" className='clock-info'/>
                         <p>
                           Vous avez gagné <span className='span-sun-info'>€1,41</span> pendent les heures creuses
@@ -164,7 +170,7 @@ const Overview = () => {
                           <span className="percentage-battery-overview">€18,5</span>
                       </ProgressCircle> */}
                       <p className='monthly-progress-title'>Progrès du mois</p>
-                      <Card className="mx-auto max-w-lg">
+                      <Card className="mx-auto max-w-xxl">
                         <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content flex items-center justify-between">
                           <span className='span-savings'>€18,5 &bull; 68%</span>
                           <span className='span-savings'>€27</span>
@@ -172,7 +178,8 @@ const Overview = () => {
                         <ProgressBar value={68} color="teal" className="mt-3" />
                       </Card>
 
-                      <p className='p-savings'>Les gains sont calculés à partir des heures creuse/pleine et a partir de la production solaire. <span className='span-savings-moreinfo'>Appuyez ici pour voir des calculs</span></p>
+                      <p className='p-savings'>Les gains sont calculés à partir des heures creuse/pleine et a partir de la production solaire. </p>
+                      {/* <p className='p-savings'>Les gains sont calculés à partir des heures creuse/pleine et a partir de la production solaire. <span className='span-savings-moreinfo'>Appuyez ici pour voir des calculs</span></p> */}
                       <div>
                       <Button variant="success" onClick={handleShow} className='button-savings'>
                             Voir mois précedents
