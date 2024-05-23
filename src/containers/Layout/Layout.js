@@ -6,7 +6,7 @@ import "./Layout.css";
 const Layout = ({ children }) => {
 	return (
 		<div className="Layout">
-			{/* <Navbar /> */}
+			<Navbar />
 			{children}
 		</div>
 	);

@@ -13,10 +13,9 @@ const Navbar = ({ children }) => {
 					<img src={logo} alt="logo" className="logo"></img>	
 				</div>
 				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/charts">Diagrams</a></li>
-					<li><a href="/charge-discharge-hours">Alarms</a></li>
-					<li><a href="/fydsh">Settings</a></li>
+					<li><a href="/">Accueil</a></li>
+					<li><a href="/charts">Mes statistiques</a></li>
+					<li><a href="/diagram">Mon installation</a></li>
 
 				</ul>
 			</div>

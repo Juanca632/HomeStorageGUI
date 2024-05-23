@@ -26,7 +26,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 const data = [
     {
       date: 'Janvier',
-      'Gain': 20,
+      'Gain': 35,
     },
     {
       date: 'Fevrier',
@@ -34,23 +34,23 @@ const data = [
     },
     {
       date: 'Mars',
-      'Gain': 10,
+      'Gain': 20,
     },
     {
       date: 'Avril',
-      'Gain': 5,
+      'Gain': 55,
     },
     {
       date: 'Mai',
-      'Gain': 15,
+      'Gain': 35,
     },
     {
       date: 'June',
-      'Gain': 8,
+      'Gain': 48,
     },
     {
       date: 'Juillet',
-      'Gain': 2,
+      'Gain': 42,
     }
   ];
 const productionType = [
@@ -142,7 +142,7 @@ const Overview = () => {
                 <div className='overview-div-rows overview-row-3'>
                   <h3 className='h3-overview'>Mes objectifs <span className='title-span-overview'>SUN</span><span className='title-span-overview-2'>IA</span></h3>
                   <div className='div-info-today'>
-                    <p className='monthly-progress-title'>Aujourd'hui</p>
+                    <p className='monthly-progress-title'>Ce mois-ci</p>
                     <div className='savings-info-day'>
                       <div className='div-sun-overview'>
                         <div className='temperature-overview'>
@@ -153,13 +153,13 @@ const Overview = () => {
                           <img src={sun} alt="sun" className='sun-info'/>
                         </div>
                         <p>
-                          Beaucoup de soleil aujourd'hui, vous avez produit <span className='span-sun-info'>15% plus</span> que d'habitude
+                          Beaucoup de soleil aujourd'hui, vous avez gagné <span className='span-sun-info'>25€</span> grâceau soleil ce mois-ci
                         </p>
                       </div>
                       <div className='div-sun-overview'>
                         <img src={clock} alt="clock" className='clock-info'/>
                         <p>
-                          Vous avez gagné <span className='span-sun-info'>€1,41</span> pendent les heures creuses
+                          Vous avez gagné <span className='span-sun-info'>7€</span> grâce aux heures creuses
                         </p>
                       </div>
                     </div>
@@ -172,10 +172,10 @@ const Overview = () => {
                       <p className='monthly-progress-title'>Progrès du mois</p>
                       <Card className="mx-auto max-w-xxl">
                         <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content flex items-center justify-between">
-                          <span className='span-savings'>€18,5 &bull; 68%</span>
-                          <span className='span-savings'>€27</span>
+                          <span className='span-savings'>33€ &bull; 80%</span>
+                          <span className='span-savings'>41€</span>
                         </p>
-                        <ProgressBar value={68} color="teal" className="mt-3" />
+                        <ProgressBar value={80} color="teal" className="mt-3" />
                       </Card>
 
                       <p className='p-savings'>Les gains sont calculés à partir des heures creuse/pleine et a partir de la production solaire. </p>
